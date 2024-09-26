@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "96224304036",
+    "project_id": "deeosoft-api",
+    "storage_bucket": "deeosoft-api.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96224304036:android:a643606bd83cdffa92ff31",
+        "android_client_info": {
+          "package_name": "com.deeosoft.youverifytest2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96224304036-582mq8ij3b5eblsmjmeja77b8hmsrml8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFR1CQFZtCQmujtIaQxvaTwg3wNTYC0Ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96224304036-582mq8ij3b5eblsmjmeja77b8hmsrml8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
