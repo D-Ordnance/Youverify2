@@ -145,14 +145,19 @@ class Registration: ComponentActivity() {
 
                     }
                     registrationViewModel.success.observeForever {
+                        showDialog = false
                         if (it != null) {
-                            showDialog = false
                             if(it.success){
                                 startActivity(Intent(this@Registration, Home::class.java))
                             }else{
                                 Toast.makeText(this@Registration, it.message, Toast.LENGTH_LONG).show()
                             }
                         }
+                    }
+
+                    registrationViewModel.failure.observeForever{
+                        showDialog = false
+                        Toast.makeText(this@Registration, it, Toast.LENGTH_LONG).show()
                     }
 
                     OnboardActions(
@@ -175,6 +180,6 @@ class Registration: ComponentActivity() {
     }
 
     private fun login() {
-        super.onBackPressedDispatcher
+        super.onBackPressedDispatcher.onBackPressed()
     }
 }

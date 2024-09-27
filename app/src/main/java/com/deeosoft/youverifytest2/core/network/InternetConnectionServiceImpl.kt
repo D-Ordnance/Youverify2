@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 
 
-class NetworkServiceImpl(private val context: Context): NetworkService {
+class InternetConnectionServiceImpl(private val context: Context): InternetConnectionService {
     override suspend fun hasInternetConnection(): Boolean {
         var haveConnectedWifi = false
         var haveConnectedMobile = false

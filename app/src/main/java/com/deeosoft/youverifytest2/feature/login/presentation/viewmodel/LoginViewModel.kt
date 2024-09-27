@@ -11,6 +11,7 @@ import com.deeosoft.youverifytest2.feature.login.domain.repository.Resource
 import com.deeosoft.youverifytest2.feature.login.domain.usecase.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,16 +30,21 @@ class LoginViewModel @Inject constructor(
     val loading: LiveData<Boolean> = _loading
 
     fun login(entity: LoginEntity){
+        _loading.postValue(true)
         viewModelScope.launch(Dispatchers.IO) {
-            loginUseCase.loginWithEmail(entity).collect{
-                _loading.postValue(true)
-                if(it is Resource.Error){
-                    _failure.postValue("User does not exist")
-                }
-                if(it is Resource.Success){
-                    _success.postValue(it.data)
-                }
-            }
+            delay(2000L)
+            _loading.postValue(false)
+            _success.postValue(OnboardingResponse(true, true, "success"))
+//            loginUseCase.loginWithEmail(entity).collect{
+//                if(it is Resource.Error){
+//                    _loading.postValue(false)
+//                    _failure.postValue("User does not exist")
+//                }
+//                if(it is Resource.Success){
+//                    _loading.postValue(false)
+//                    _success.postValue(it.data)
+//                }
+//            }
         }
     }
 }

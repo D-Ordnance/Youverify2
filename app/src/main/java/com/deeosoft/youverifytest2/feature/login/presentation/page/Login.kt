@@ -131,14 +131,19 @@ class Login: ComponentActivity() {
 
                     }
                     loginViewModel.success.observeForever {
+                        showDialog = false
                         if (it != null) {
-                            showDialog = false
                             if(it.success){
                                 startActivity(Intent(this@Login, Home::class.java))
                             }else{
                                 Toast.makeText(this@Login, it.message, Toast.LENGTH_LONG).show()
                             }
                         }
+                    }
+
+                    loginViewModel.failure.observeForever{
+                        showDialog = false
+                        Toast.makeText(this@Login, it, Toast.LENGTH_LONG).show()
                     }
 
                     OnboardActions(

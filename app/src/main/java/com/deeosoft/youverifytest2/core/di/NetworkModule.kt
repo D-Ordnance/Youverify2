@@ -3,8 +3,8 @@ package com.deeosoft.youverifytest2.core.di
 import android.content.Context
 import com.deeosoft.youverifytest2.core.network.AuthService
 import com.deeosoft.youverifytest2.core.network.AuthServiceImpl
-import com.deeosoft.youverifytest2.core.network.NetworkService
-import com.deeosoft.youverifytest2.core.network.NetworkServiceImpl
+import com.deeosoft.youverifytest2.core.network.InternetConnectionService
+import com.deeosoft.youverifytest2.core.network.InternetConnectionServiceImpl
 import com.google.firebase.Firebase
 import dagger.Module
 import dagger.Provides
@@ -33,7 +33,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideNetworkService(context: Context): NetworkService {
-        return NetworkServiceImpl(context = context)
+    fun provideNetworkService(context: Context): InternetConnectionService {
+        return InternetConnectionServiceImpl(context = context)
     }
 }

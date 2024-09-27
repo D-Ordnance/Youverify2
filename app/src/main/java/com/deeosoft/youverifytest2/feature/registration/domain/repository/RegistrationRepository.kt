@@ -6,5 +6,5 @@ import com.deeosoft.youverifytest2.feature.registration.domain.entity.Registrati
 import kotlinx.coroutines.flow.Flow
 
 interface RegistrationRepository {
-    suspend fun loginWithEmail(model: RegistrationEntity): Flow<Resource<OnboardingResponse>>
+    suspend fun register(model: RegistrationEntity): Flow<Resource<OnboardingResponse>>
 }

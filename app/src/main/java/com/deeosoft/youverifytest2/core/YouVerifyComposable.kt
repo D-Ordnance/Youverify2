@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -66,6 +67,8 @@ fun YouVerifyText(
     fontSize: TextUnit = 14.sp,
     textAlign: TextAlign = TextAlign.Left,
     lineHeight: TextUnit = TextUnit.Unspecified,
+    maxLines: Int = 1,
+    overflow: TextOverflow = TextOverflow.Clip,
     textDecoration: TextDecoration = TextDecoration.None,
     @ColorRes color: Int
 ) {
@@ -76,6 +79,8 @@ fun YouVerifyText(
         fontSize = fontSize,
         textAlign = textAlign,
         lineHeight = lineHeight,
+        maxLines = maxLines,
+        overflow = overflow,
         fontFamily = YouVerifyFontFamily,
         fontWeight = FontWeight.Light,
         color = colorResource(id = color)

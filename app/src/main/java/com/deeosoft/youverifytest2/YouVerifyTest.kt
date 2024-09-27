@@ -10,14 +10,4 @@ import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
 @HiltAndroidApp
-class YouVerifyTest: Application() {
-//    @Inject lateinit var firebase: Firebase
-    override fun onCreate() {
-        super.onCreate()
-
-//        val auth: AuthService = AuthServiceImpl(firebase)
-//        auth.initialize(this)
-
-//        FirebaseApp.initializeApp(this)
-    }
-}
+class YouVerifyTest: Application() {}
