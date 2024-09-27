@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">YouVerifyTest2</string>
+    <string name="hi_user">Hi User</string>
 </resources>

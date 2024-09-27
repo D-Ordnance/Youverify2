@@ -1,11 +1,8 @@
 package com.deeosoft.youverifytest2.feature.login.data.datasource
 
-import android.util.Log
 import com.deeosoft.youverifytest2.feature.login.domain.entity.LoginEntity
 import com.deeosoft.youverifytest2.feature.login.domain.repository.Resource
-import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.firestore
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 

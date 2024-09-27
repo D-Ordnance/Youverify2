@@ -32,19 +32,16 @@ class LoginViewModel @Inject constructor(
     fun login(entity: LoginEntity){
         _loading.postValue(true)
         viewModelScope.launch(Dispatchers.IO) {
-            delay(2000L)
-            _loading.postValue(false)
-            _success.postValue(OnboardingResponse(true, true, "success"))
-//            loginUseCase.loginWithEmail(entity).collect{
-//                if(it is Resource.Error){
-//                    _loading.postValue(false)
-//                    _failure.postValue("User does not exist")
-//                }
-//                if(it is Resource.Success){
-//                    _loading.postValue(false)
-//                    _success.postValue(it.data)
-//                }
-//            }
+            loginUseCase.loginWithEmail(entity).collect{
+                if(it is Resource.Error){
+                    _loading.postValue(false)
+                    _failure.postValue(it.message!!)
+                }
+                if(it is Resource.Success){
+                    _loading.postValue(false)
+                    _success.postValue(it.data)
+                }
+            }
         }
     }
 }
